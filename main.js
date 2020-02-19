@@ -5,16 +5,13 @@ const pricing = {
     "2bed": 20
   }
   let model = {
- 
-  }
+ 'startdate' : 3
+  };
   bind("#startdate", model, 'startdate');
   bind("#enddate", model, 'enddate');
   bind("#room", model, 'room');
   bind("#sum", model, 'sum');
   function calc() {
-    console.log(model.startdate);
-    console.log(model.enddate);
-    console.log(model.room);
     if(model.startdate && model.enddate && model.room) {
       const days = Math.round((new Date(model.enddate) - new Date(model.startdate))/(24*60*60*1000));
       if(pricing[model.room]) {
@@ -23,4 +20,4 @@ const pricing = {
       }
     }
   }   
-  document.body.querySelector("button").addEventListener("click",calc,false); 
+  document.body.querySelector("button").addEventListener("click",calc); 
